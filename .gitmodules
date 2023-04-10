@@ -1,0 +1,3 @@
+[submodule "design/proc"]
+	path = design/proc
+	url = git@github.com:cchaine/ECAP5-DPROC
