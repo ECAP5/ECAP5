@@ -1,3 +1,6 @@
 [submodule "design/proc"]
 	path = design/proc
 	url = git@github.com:cchaine/ECAP5-DPROC
+[submodule "tools/req"]
+	path = tools/req
+	url = git@github.com:cchaine/ECAP5-TREQ
