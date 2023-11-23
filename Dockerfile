@@ -12,7 +12,8 @@ RUN useradd ubuntu --create-home -p "" && \
         asciidoctor \
         curl \
         wget \
-        tar && \
+        tar \
+        cmake && \
     \
     # Install texlive
     apt install -qy texlive-latex-extra texlive-science && \
@@ -22,6 +23,8 @@ RUN useradd ubuntu --create-home -p "" && \
     tar xvf oss-cad-suite-linux-arm64-20230902.tgz && \    
     rm -rf oss-cad-suite-linux-arm64-20230902.tgz && \
     mv oss-cad-suite /usr/share/oss-cad-suite && \
+    echo "export VERILATOR_ROOT=/usr/share/oss-cad-suite/share/verilator/" >> /home/ubuntu/.env && \
+    echo "export PATH=\$PATH:/usr/share/oss-cad-suite/bin/" >> /home/ubuntu/.env && \
     \
     # Configure a github action runner is specified
     if [ "$is_runner" = "on" ] ; then \
@@ -35,6 +38,7 @@ RUN useradd ubuntu --create-home -p "" && \
     # Generate startup script
     echo "#!/bin/bash" > start.sh && \
     echo "if [ -f '/home/ubuntu/svc.sh' ]; then" >> start.sh && \
+    echo "  source ~/.env" >> start.sh && \
     echo "  cd /home/ubuntu/ && ./run.sh;" >> start.sh && \
     echo "elif [ "$is_runner" = "on" ]; then" >> start.sh && \
     echo "  bash --init-file <(echo \". ~/.bashrc; echo -e '**********************************************\n* Please configure the github actions runner *\n**********************************************\n'\");" >> start.sh && \
