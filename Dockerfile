@@ -13,7 +13,10 @@ RUN useradd ubuntu --create-home -p "" && \
         curl \
         wget \
         tar \
-        cmake && \
+        cmake \
+        ninja-build \
+        python3-pip \
+        python3-venv && \
     \
     # Install texlive
     apt install -qy texlive-latex-extra texlive-science && \
@@ -25,6 +28,7 @@ RUN useradd ubuntu --create-home -p "" && \
     mv oss-cad-suite /usr/share/oss-cad-suite && \
     echo "export VERILATOR_ROOT=/usr/share/oss-cad-suite/share/verilator/" >> /home/ubuntu/.env && \
     echo "export PATH=\$PATH:/usr/share/oss-cad-suite/bin/" >> /home/ubuntu/.env && \
+    echo "export DEB_PYTHON_INSTALL_LAYOUT=deb_system" >> /home/ubuntu/.env && \
     \
     # Configure a github action runner is specified
     if [ "$is_runner" = "on" ] ; then \
