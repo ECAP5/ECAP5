@@ -10,7 +10,7 @@ docker run --platform linux/amd64 -v `pwd`:/home/ubuntu/ecap5 -v ~/.ssh:/home/ub
 ```
 ### Self-hosted Github Action runner
 ```bash
-docker build -t ecap5 . --build-arg is_runner=on
+docker build -t ecap5-runner . --build-arg is_runner=on
 docker run --platform linux/amd64 -v `pwd`:/home/ubuntu/ecap5 -v ~/.ssh:/home/ubuntu/.ssh --env TERM=xterm-256color --name ecap5-runner -it ecap5-runner
 # In the newly opened shell
 cd /home/ubuntu

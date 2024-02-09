@@ -30,6 +30,8 @@ RUN useradd ubuntu --create-home -p "" && \
     echo "export PATH=\$PATH:/usr/share/oss-cad-suite/bin/" >> /home/ubuntu/.env && \
     echo "export DEB_PYTHON_INSTALL_LAYOUT=deb_system" >> /home/ubuntu/.env && \
     \
+    echo "source ~/.env" >> /home/ubuntu/.bashrc && \
+    \
     # Configure a github action runner is specified
     if [ "$is_runner" = "on" ] ; then \
       cd /home/ubuntu/ && \
