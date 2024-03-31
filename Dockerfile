@@ -16,7 +16,8 @@ RUN useradd ubuntu --create-home -p "" && \
         cmake \
         ninja-build \
         python3-pip \
-        python3-venv && \
+        python3-venv \
+        gcc-riscv64-unknown-elf && \
     \
     # Install texlive
     apt install -qy texlive-latex-extra texlive-science && \
@@ -28,12 +29,22 @@ RUN useradd ubuntu --create-home -p "" && \
     mv oss-cad-suite /usr/share/oss-cad-suite && \
     echo "export VERILATOR_ROOT=/usr/share/oss-cad-suite/share/verilator/" >> /home/ubuntu/.env && \
     echo "export PATH=\$PATH:/usr/share/oss-cad-suite/bin/" >> /home/ubuntu/.env && \
+    \
     # Install the verible suite
     wget https://github.com/chipsalliance/verible/releases/download/v0.0-3624-gd256d779/verible-v0.0-3624-gd256d779-linux-static-x86_64.tar.gz && \
     tar xvf verible-v0.0-3624-gd256d779-linux-static-x86_64.tar.gz && \
     rm -rf verible-v0.0-3624-gd256d779-linux-static-x86_64.tar.gz && \
-    mv verible-v0.0-3624-gd256d779-linux-static-x86_64.tar.gz /usr/share/verible-suite && \
+    mv verible-v0.0-3624-gd256d779 /usr/share/verible-suite && \
+    chmod 755 -R /usr/share/verible-suite && \
     echo "export PATH=\$PATH:/usr/share/verible-suite/bin/" >> /home/ubuntu/.env && \
+    \
+    # Install Github CLI
+    wget https://github.com/cli/cli/releases/download/v2.46.0/gh_2.46.0_linux_amd64.tar.gz && \
+    tar xvf gh_2.46.0_linux_amd64.tar.gz && \
+    rm -rf gh_2.46.0_linux_amd64.tar.gz && \
+    mv gh_2.46.0_linux_amd64 /usr/share/gh && \
+    echo "export PATH=\$PATH:/usr/share/gh/bin/" >> /home/ubuntu/.env && \
+    \
     echo "export DEB_PYTHON_INSTALL_LAYOUT=deb_system" >> /home/ubuntu/.env && \
     \
     echo "source ~/.env" >> /home/ubuntu/.bashrc && \
