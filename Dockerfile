@@ -17,7 +17,8 @@ RUN useradd ubuntu --create-home -p "" && \
         ninja-build \
         python3-pip \
         python3-venv \
-        gcc-riscv64-unknown-elf && \
+        gcc-riscv64-unknown-elf \
+        ssh && \
     \
     # Install texlive
     apt install -qy texlive-latex-extra texlive-science && \
@@ -59,6 +60,7 @@ RUN useradd ubuntu --create-home -p "" && \
     fi && \
     \
     # Generate startup script
+    cd /home/ubuntu && \
     echo "#!/bin/bash" > start.sh && \
     echo "if [ -f '/home/ubuntu/svc.sh' ]; then" >> start.sh && \
     echo "  source ~/.env" >> start.sh && \
