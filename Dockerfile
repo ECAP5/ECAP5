@@ -39,6 +39,8 @@ RUN useradd ubuntu --create-home -p "" && \
     chmod 755 -R /usr/share/verible-suite && \
     echo "export PATH=\$PATH:/usr/share/verible-suite/bin/" >> /home/ubuntu/.env && \
     \
+    # Install sphinx
+    pip -H install sphinx sphinx-rtd-theme sphinx-toolbox && \
     # Install Github CLI
     wget https://github.com/cli/cli/releases/download/v2.46.0/gh_2.46.0_linux_amd64.tar.gz && \
     tar xvf gh_2.46.0_linux_amd64.tar.gz && \
