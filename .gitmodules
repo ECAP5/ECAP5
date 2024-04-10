@@ -4,3 +4,6 @@
 [submodule "tools/req"]
 	path = tools/req
 	url = git@github.com:cchaine/ECAP5-TREQ
+[submodule "design/tlib"]
+	path = design/tlib
+	url = git@github.com:ecap5/ecap5-dtlib
