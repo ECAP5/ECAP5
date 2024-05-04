@@ -7,3 +7,9 @@
 [submodule "design/tlib"]
 	path = design/tlib
 	url = git@github.com:ecap5/ecap5-dtlib
+[submodule "design/wbuart"]
+	path = design/wbuart
+	url = git@github.com:ecap5/ecap5-dwbuart
+[submodule "design/soc"]
+	path = design/soc
+	url = git@github.com:ecap5/ecap5-dsoc
