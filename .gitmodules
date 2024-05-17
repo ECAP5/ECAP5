@@ -13,3 +13,6 @@
 [submodule "design/soc"]
 	path = design/soc
 	url = git@github.com:ecap5/ecap5-dsoc
+[submodule "boards/som"]
+	path = boards/som
+	url = git@github.com:ecap5/ecap5-bsom
