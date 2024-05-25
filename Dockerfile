@@ -49,7 +49,7 @@ RUN apt install -qy --no-install-recommends texlive-latex-extra texlive-science 
     echo "export PATH=\$PATH:/opt/verible-suite/bin/" >> /home/ubuntu/.env && \
     \
     # Install sphinx
-    pip install sphinx sphinx-rtd-theme sphinx-toolbox --break-system-packages && \
+    pip install sphinx sphinx-rtd-theme sphinx-toolbox linuxdoc --break-system-packages && \
     # Install Github CLI
     wget https://github.com/cli/cli/releases/download/v2.46.0/gh_2.46.0_linux_arm64.tar.gz && \
     tar xvf gh_2.46.0_linux_arm64.tar.gz && \
