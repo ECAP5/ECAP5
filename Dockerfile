@@ -30,6 +30,16 @@ RUN apt install -qy --no-install-recommends \
     rm -rf /opt/riscv-gnu-toolchain && \
     echo "export PATH=\$PATH:/opt/riscv/bin" >> /home/ubuntu/.env
 
+RUN apt install -qy --no-install-recommends gfortran libopenmpi-dev libblas-dev liblapack-dev && \
+    cd /opt/ && \
+    git clone https://github.com/ElmerCSC/elmerfem.git && \
+    cd elmerfem && \
+    git checkout 562739b2daa7ec02e95c817f12d6a7cbd10f72e7 && \
+    mkdir build && cd build && \
+    cmake .. -DWITH_OpenMP:BOOLEAN=TRUE && \
+    make -j 4 && \
+    make install
+
 RUN apt install -qy --no-install-recommends texlive-latex-extra texlive-science && \
     \
     # Install the oss-cad-suite
