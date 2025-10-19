@@ -59,7 +59,7 @@ RUN apt install -qy --no-install-recommends texlive-latex-extra texlive-science 
     echo "export PATH=\$PATH:/opt/verible-suite/bin/" >> /home/ubuntu/.env && \
     \
     # Install sphinx
-    pip install sphinx sphinx-rtd-theme sphinx-toolbox linuxdoc --break-system-packages && \
+    pip install sphinx sphinx-rtd-theme sphinx-toolbox linuxdoc sphinx-design --break-system-packages && \
     # Install Github CLI
     wget https://github.com/cli/cli/releases/download/v2.46.0/gh_2.46.0_linux_arm64.tar.gz && \
     tar xvf gh_2.46.0_linux_arm64.tar.gz && \
@@ -75,8 +75,8 @@ RUN echo "export DEB_PYTHON_INSTALL_LAYOUT=deb_system" >> /home/ubuntu/.env && \
     # Configure a github action runner is specified
     if [ "$is_runner" = "on" ] ; then \
       cd /home/ubuntu/ && \
-      curl -o actions-runner-linux-arm64-2.311.0.tar.gz -L https://github.com/actions/runner/releases/download/v2.311.0/actions-runner-linux-arm64-2.311.0.tar.gz && \
-      tar xzf ./actions-runner-linux-arm64-2.311.0.tar.gz --no-same-owner && \
+      curl -o actions-runner-linux-arm64-2.329.0.tar.gz -L https://github.com/actions/runner/releases/download/v2.329.0/actions-runner-linux-arm64-2.329.0.tar.gz && \
+      tar xzf ./actions-runner-linux-arm64-2.329.0.tar.gz --no-same-owner && \
       ./bin/installdependencies.sh ; \
     fi && \
     \
