@@ -10,8 +10,7 @@ docker run --platform linux/arm64 -v `pwd`:/home/ubuntu/ecap5 -v ~/.ssh:/home/ub
 ```
 ### Self-hosted Github Action runner
 ```bash
-docker build -t ecap5-runner . --build-arg is_runner=on
-docker run --platform linux/arm64 --env TERM=xterm-256color --name ecap5-runner -it ecap5-runner
+docker run --platform linux/arm64 --env TERM=xterm-256color --env RUNNER=1 --name ecap5-runner -it ecap5
 # In the newly opened shell
 cd /home/ubuntu
 ./config.sh --url <repo> --token <token>
