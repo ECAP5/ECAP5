@@ -16,3 +16,6 @@
 [submodule "boards/som"]
 	path = boards/som
 	url = git@github.com:ecap5/ecap5-bsom
+[submodule "boards/carrier-xlite"]
+	path = boards/carrier-xlite
+	url = git@github.com:ecap5/ecap5-bcarrier-xlite
