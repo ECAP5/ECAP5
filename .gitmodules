@@ -22,3 +22,6 @@
 [submodule "design/blinky"]
 	path = design/blinky
 	url = git@github.com:ecap5/ecap5-dblinky
+[submodule "design/wbmem-bram"]
+	path = design/wbmem-bram
+	url = git@github.com:ecap5/ecap5-dwbmem-bram
