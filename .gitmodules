@@ -25,3 +25,6 @@
 [submodule "design/wbmem-bram"]
 	path = design/wbmem-bram
 	url = git@github.com:ecap5/ecap5-dwbmem-bram
+[submodule "design/wbmmsc"]
+	path = design/wbmmsc
+	url = git@github.com:ecap5/ecap5-dwbmmsc
