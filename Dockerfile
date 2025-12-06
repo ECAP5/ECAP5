@@ -54,7 +54,7 @@ RUN wget https://github.com/YosysHQ/oss-cad-suite-build/releases/download/2023-0
     chmod 755 -R /opt/verible-suite && \
     echo "export PATH=\$PATH:/opt/verible-suite/bin/" >> /home/ubuntu/.env
 
-RUN pip install sphinx sphinx-rtd-theme sphinx-toolbox linuxdoc sphinx-design --break-system-packages && \
+RUN pip install sphinx sphinx-rtd-theme sphinx-toolbox linuxdoc sphinx-design sphinxcontrib-bitfield --break-system-packages && \
     # Install Github CLI
     wget https://github.com/cli/cli/releases/download/v2.46.0/gh_2.46.0_linux_arm64.tar.gz && \
     tar xvf gh_2.46.0_linux_arm64.tar.gz && \
@@ -73,6 +73,21 @@ RUN apt install -qy --no-install-recommends gfortran libopenmpi-dev libblas-dev 
     make install
 
 RUN apt install -qy --no-install-recommends libusb-1.0-0
+
+RUN sudo -H -u ubuntu bash -c "curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs > /tmp/install_rustup.sh && \
+    bash /tmp/install_rustup.sh -y && \
+    . /home/ubuntu/.cargo/env && \
+    cargo install bender"
+
+RUN cd /opt/ && \
+    curl -sSL https://get.haskellstack.org/ | sh
+
+RUN cd /opt/ && \
+    git clone https://github.com/zachjs/sv2v.git && \
+    cd sv2v && \
+    git checkout tags/v0.0.13 && \
+    make && \
+    echo "export PATH=\$PATH:/opt/sv2v/bin/" >> /home/ubuntu/.env
 
 RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 
