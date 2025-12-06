@@ -28,3 +28,9 @@
 [submodule "design/wbmmsc"]
 	path = design/wbmmsc
 	url = git@github.com:ecap5/ecap5-dwbmmsc
+[submodule "design/wbtimer"]
+	path = design/wbtimer
+	url = git@github.com:ecap5/ecap5-dwbtimer
+[submodule "design/wbgpio"]
+	path = design/wbgpio
+	url = git@github.com:ecap5/ecap5-dwbgpio
