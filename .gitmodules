@@ -34,6 +34,6 @@
 [submodule "design/wbgpio"]
 	path = design/wbgpio
 	url = git@github.com:ecap5/ecap5-dwbgpio
-[submodule "firmware/doomgeneric"]
-	path = firmware/doomgeneric
-	url = git@github.com:ecap5/doomgeneric
+[submodule "firmware/doom"]
+	path = firmware/doom
+	url = git@github.com:ecap5/ecap5-fdoom
