@@ -37,3 +37,6 @@
 [submodule "firmware/doom"]
 	path = firmware/doom
 	url = git@github.com:ecap5/ecap5-fdoom
+[submodule "design/wbspi"]
+	path = design/wbspi
+	url = git@github.com:ecap5/ecap5-dwbspi
