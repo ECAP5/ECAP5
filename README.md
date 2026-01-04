@@ -37,7 +37,7 @@ ECAP5 acts as a production-ready hardware scaffolding, allowing researchers to f
 
 ***04/01/2026:** Development is currently on pause.*
 
-**04/01/2026:** The ECAP5 platform has now been fully integrated and is working as expected. An experimental run of DOOM has been executed and a view was successfully rendered.
+**04/01/2026:** The ECAP5 platform has now been fully integrated and is working as expected. An experimental build of DOOM has been executed and a view was successfully rendered.
 
 ## Running the docker build environment
 ### Local development environment
