@@ -2,7 +2,7 @@
     
   <img src="https://github.com/user-attachments/assets/e5f0c0c9-1394-4e8b-a747-6fec274d5ca5" alt="Board" width="400" height="300"/>
 
-  <h3 align="center">ECAP5-DSOC</h3>
+  <h3 align="center">ECAP5</h3>
   <p align="center">
     Educational Computer Architecture Platform
     <br />
